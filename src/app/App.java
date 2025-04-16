@@ -1,6 +1,7 @@
 package app;
 
 import app.controllers.MetodosBusqueda;
+import app.controllers.MetodosBusquedaBinaria;
 import app.models.Persona;
 
 public class App {
@@ -14,7 +15,12 @@ public class App {
         personas[4] = new Persona(105,  "Luis");
         personas[5] = new Persona(106,  "Sofia");
         personas[6] = new Persona(107,  "Pedro");
-        MetodosBusqueda mB = new MetodosBusqueda(personas);
+        // MetodosBusqueda mB = new MetodosBusqueda(personas);
+        MetodosBusquedaBinaria mBB= new MetodosBusquedaBinaria(personas);
+        mBB.showPersonaByName();
+        mBB.ordenarBurbuja(personas);
+        mBB.showPersonByCode();
+
         
         
         
