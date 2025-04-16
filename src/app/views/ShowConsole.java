@@ -15,9 +15,14 @@ public class ShowConsole {
     }
 
     public int inputCode(){
-        System.out.println("Ingrese un codigo");
+        System.out.println("Ingrese un codigo: ");
         int code = scanner.nextInt();
         return code;
+    }
+    public String inputName(){
+        System.out.println("Ingrese el nombre: ");
+        String name = scanner.next();
+        return name;
     }
     
 

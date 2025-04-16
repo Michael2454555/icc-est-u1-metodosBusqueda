@@ -10,7 +10,7 @@ public class MetodosBusqueda {
         showConsole = new ShowConsole();
         this.people= persons;
         showPerson();
-        // showPersonByName();
+        showPersonByName();
     }
     
 
@@ -50,16 +50,23 @@ public class MetodosBusqueda {
         }
     }
     public int findPersonByName(String name){
+        for(int i =0; i < people.length;i++){
+            if(people[i].getName().equalsIgnoreCase(name)){
+                return i; 
+            }
+        }
         return -1;
     }
-    // public void showPersonByName(){
-    //     String nameTofinde= showConsole.inputName();
-    //     int indexPerson = findPersonByName(nameTofinde);
-    //     if (indexPerson >=0){
-    //         showConsole.showMessage("Nombre persona" +" "+nameTofinde+" "+ "encontrada");
-    //         showConsole.showMessage((String)people[indexPerson].toString());
-    //         showConsole.showMessage(people[indexPerson]+"");
+    public void showPersonByName(){
+        String nameTofinde= showConsole.inputName();
+        int index = findPersonByName(nameTofinde);
+        if (index >=0){
+            showConsole.showMessage("Nombre persona" +" "+nameTofinde+" "+ "encontrada");
+            showConsole.showMessage(people[index].toString());
+            showConsole.showMessage(people[index]+"");
 
-    //     }
-    // }
+        }else{
+            showConsole.showMessage("Nombre no encontrado");
+        }
+    }
 }
